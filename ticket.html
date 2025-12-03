@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bus Booking Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #ACB6E5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .booking-form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 300px;
+    }
+
+    .booking-form input, .booking-form button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .booking-form button {
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .booking-form button:hover {
+      background: #45a049;
+    }
+
+    .bus {
+      position: absolute;
+      bottom: 50px;
+      left: -200px;
+      width: 150px;
+      transition: transform 3s ease-in-out;
+    }
+
+    .move {
+      transform: translateX(1200px);
+    }
+  </style>
+</head>
+<body>
+  <h1>Bus Booking</h1>
+  <form class="booking-form" onsubmit="startBus(event)">
+    <input type="text" placeholder="From" required>
+    <input type="text" placeholder="To" required>
+    <input type="date" required>
+    <input type="number" placeholder="Seats" min="1" required>
+    <button type="submit">Book Now</button>
+  </form>
+
+  <!-- Simple Bus Illustration -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Bus_icon.svg/512px-Bus_icon.svg.png" 
+       alt="Bus" class="bus" id="bus">
+
+  <script>
+    function startBus(event) {
+      event.preventDefault();
+      const bus = document.getElementById('bus');
+      bus.classList.remove('move'); // reset
+      void bus.offsetWidth; // trigger reflow
+      bus.classList.add('move');
+      alert("Booking confirmed! 🎉");
+    }
+  </script>
+</body>
+</html>
