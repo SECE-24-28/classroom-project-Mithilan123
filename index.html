@@ -71,35 +71,35 @@
 </head>
 <body>
     <h3>Student Details</h3>
-    <form>
+    <form id="studentForm">
         <table>
             <tr>
                 <td><label>Name:</label></td>
-                <td><input type="text"></td>
+                <td><input type="text" id="name"></td>
             </tr>
             <tr>
                 <td><label>Year:</label></td>
-                <td><input type="text"></td>
+                <td><input type="text" id="year"></td>
             </tr>
             <tr>
                 <td><label>Age:</label></td>
-                <td><input type="number"></td>
+                <td><input type="number" id="age"></td>
             </tr>
             <tr>
                 <td><label>Date of Joining:</label></td>
-                <td><input type="date"></td>
+                <td><input type="date" id="doj"></td>
             </tr>
             <tr>
                 <td><label>Date of birth:</label></td>
-                <td><input type="date"></td>
+                <td><input type="date" id="dob"></td>
             </tr>
             <tr>
                 <td><label>Email:</label></td>
-                <td><input type="email"></td>
+                <td><input type="email" id="email"></td>
             </tr>
             <tr>
                 <td><label>Resume:</label></td>
-                <td><input type="file"></td>
+                <td><input type="file" id="resume"></td>
             </tr>
             <tr>
                 <td colspan="2" style="text-align:center;">
@@ -108,5 +108,22 @@
             </tr>
         </table>
     </form>
+
+    <script>
+        document.getElementById("studentForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            const userDetails = {
+                name: document.getElementById("name").value,
+                year: document.getElementById("year").value,
+                age: document.getElementById("age").value,
+                dateOfJoining: document.getElementById("doj").value,
+                dateOfBirth: document.getElementById("dob").value,
+                email: document.getElementById("email").value,
+                resume: document.getElementById("resume").files[0] ? document.getElementById("resume").files[0].name : "No file uploaded"
+            };
+
+            console.log("User Details:", userDetails);
+        });
+    </script>
 </body>
 </html>

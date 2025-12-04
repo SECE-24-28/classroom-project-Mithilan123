@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Gallery</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fdf6f0;
+      color: #333;
+    }
+
+    header {
+      background: #d35400;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      padding: 20px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover .overlay {
+      transform: translateY(0);
+    }
+
+    .overlay h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .overlay p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+      }
+
+      .gallery-item img {
+        height: 200px;
+      }
+
+      header {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Food Gallery</h1>
+    <p>Explore our delicious collection of food images</p>
+  </header>
+
+  <div class="container">
+    <div class="gallery">
+      <div class="gallery-item item-1">
+        <img src="food1.jpeg" alt="Pizza">
+        <div class="overlay">
+          <h3>Cheesy Pizza</h3>
+          <p>Hot and fresh from the oven</p>
+        </div>
+      </div>
+
+      <div class="gallery-item item-2">
+        <img src="food2.jpeg" alt="Burger">
+        <div class="overlay">
+          <h3>Juicy Burger</h3>
+          <p>Loaded with flavors</p>
+        </div>
+      </div>
+
+      <div class="gallery-item item-3">
+        <img src="food3.jpeg" alt="Pasta">
+        <div class="overlay">
+          <h3>Italian Pasta</h3>
+          <p>Rich and creamy sauce</p>
+        </div>
+      </div>
+
+      <div class="gallery-item item-4">
+        <img src="food4.jpeg" alt="Ice Cream">
+        <div class="overlay">
+          <h3>Ice Cream Sundae</h3>
+          <p>Sweet and chilled treat</p>
+        </div>
+      </div>
+
+      <div class="gallery-item item-5">
+        <img src="food5.jpeg" alt="Salad">
+        <div class="overlay">
+          <h3>Fresh Salad</h3>
+          <p>Healthy and colorful</p>
+        </div>
+      </div>
+
+      <div class="gallery-item item-6">
+        <img src="food6.jpeg" alt="Sushi">
+        <div class="overlay">
+          <h3>Sushi Rolls</h3>
+          <p>Authentic Japanese taste</p>
+        </div>
+      </div>
+
+      <div class="gallery-item item-7">
+        <img src="food7.jpeg" alt="Cake">
+        <div class="overlay">
+          <h3>Chocolate Cake</h3>
+          <p>Rich and moist dessert</p>
+        </div>
+      </div>
+
+      <div class="gallery-item item-8">
+        <img src="food8.jpeg" alt="Coffee">
+        <div class="overlay">
+          <h3>Cappuccino</h3>
+          <p>Perfect morning brew</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
